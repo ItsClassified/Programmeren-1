@@ -1,0 +1,160 @@
+import java.io.BufferedReader;
+import java.io.FileFilter;
+import java.io.InputStreamReader;
+
+public class Calendar {
+
+	public static void main(String[] args) {
+		Calendar calendar = new Calendar();
+		boolean loop = true;
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try
+		{
+			while(loop == true) {
+				System.out.println("Please typ the number of the month you want to see!");
+				String s = br.readLine();
+				calendar.print(Integer.parseInt(s));
+			}
+		}
+		catch(Exception e)		
+		{
+			loop = false;
+			System.out.println("Something went wrong: " + e.getMessage());
+			
+		}
+	}
+	
+	public void selectMonth() {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try
+		{
+			System.out.println();
+			String s = br.readLine();
+		}
+		catch(Exception e)		
+		{
+			System.out.println("AII - Something went wrong: " + e.getMessage());
+		}
+			
+	}
+
+	void print(int month) {
+		int startDay = 0;
+		int lastDay = 0;
+
+		String monthString;
+
+		switch (month) {
+		case 1:
+			monthString = "January";
+			lastDay = 31;
+			startDay = 7;
+			break;
+		case 2:
+			monthString = "February";
+			lastDay = 28;
+			startDay = 3;
+			break;
+		case 3:
+			monthString = "March";
+			lastDay = 31;
+			startDay = 3;
+			break;
+		case 4:
+			monthString = "April";
+			lastDay = 30;
+			startDay = 6;
+			break;
+		case 5:
+			monthString = "May";
+			lastDay = 31;
+			startDay = 1;
+			break;
+		case 6:
+			monthString = "June";
+			lastDay = 30;
+			startDay = 4;
+			break;
+		case 7:
+			monthString = "July";
+			lastDay = 31;
+			startDay = 6;
+			break;
+		case 8:
+			monthString = "August";
+			lastDay = 31;
+			startDay = 2;
+			break;
+		case 9:
+			monthString = "September";
+			lastDay = 30;
+			startDay = 5;
+			break;
+		case 10:
+			monthString = "October";
+			lastDay = 31;
+			startDay = 7;
+			break;
+		case 11:
+			monthString = "November";
+			lastDay = 30;
+			startDay = 3;
+			break;
+		case 12:
+			monthString = "December";
+			lastDay = 31;
+			startDay = 5;
+			break;
+		default:
+			monthString = "Invalid month";
+			lastDay = 0;
+			startDay = 0;
+			break;
+		}
+		
+		int currentDay = 0;
+		String spacing = "";
+		
+		// Set the start of the calander
+		System.out.println("2017");  						// 2017
+		System.out.println(monthString); 					// Month
+		System.out.println("Mo Tu We Th Fr Sa Su"); 		// Mo Tu We Th Fr Sa Su
+		
+		// Make the first row of days, starting at the startDay
+		for(int i = 1; i <= 7; i++) {
+			// Don't print the days that are below the day it has to start at in the week
+			if(i < startDay) {
+				System.out.print("   ");
+			} else {
+				System.out.print(i - startDay + 1 +  "  ");
+				// Set currentday to the last day that has been printed for the first week.
+				currentDay = i - startDay + 1;
+			}
+			
+		}
+		
+		System.out.println("");
+		
+		// Loop amount of weeks in the month
+		for(int week = 0; week < lastDay / 7 + 1; week++) {
+			// Print the days per week
+			for (int day = 0; day < 7; day++) {
+				// Check if it isn't the last day yet
+				if(currentDay < lastDay) {
+					// Check what number it is to add the correct spacing
+					if(currentDay < 9) {
+						spacing = "  ";
+					} else {
+						spacing = " ";
+					}
+					// Print the day and add the spacing
+					System.out.print(currentDay + 1 + spacing);
+					// add 1 to currentday :)
+					currentDay++;
+				}
+			}
+			System.out.println("");
+		}
+	}
+}
