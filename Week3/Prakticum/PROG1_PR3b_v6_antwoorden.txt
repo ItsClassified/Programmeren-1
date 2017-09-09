@@ -1,0 +1,118 @@
+Programmeren Week 3 Practicum B
+
+SIMPLE
+Opdracht 1:
+	-
+
+Opdracht 2:
+		System.out.println("I'm it!");
+		
+		// Loop from 1 till 9 to print out 1 till 9 You can also use While, however this is cleaner and quicker
+		for (int i = 1; i < 10; i++) {
+			System.out.print(i + ", ");
+		}
+		
+		// Print out 10 so it doesnt have a ','
+		System.out.println("10");
+		System.out.println("Come out, come out, where ever you are!");
+		
+Opdracht 3:
+		// Create Array creatures with given values
+		String[] creatures = {"Hond", "Kat", "Paard", "Cavia", "T-Rex"};
+		
+		// creatures.length gives the length of the array (items in the array) in this case 5.
+		for (int i = 0; i < creatures.length; i++) {
+			// creatures[i] gives creatures[0] = Hond -> creatures[1] = Kat
+			System.out.println(creatures[i]);
+		}
+		
+BASIS
+Opdracht 1:
+		// Create double Array (1.0, 4.0, 5.0, 19.0, 6.0) Int would be (1, 4, 5, 19, 6)
+		double[] cijfers = {1, 4, 5, 19, 7};
+		// Create variable to count all the items in.
+		double avgCijfers = 0.0;
+		
+		// Loop for each cijfer in the array so we get a total points
+		for (int i = 0; i < cijfers.length; i++) {
+			// int += x is the same as: int = int + x
+			avgCijfers += cijfers[i];
+		}
+		
+		// Print avgCijfers / amount of items that have been used.
+		System.out.println(avgCijfers / cijfers.length);
+
+Opdracht 2:
+		// Create double Array (1.0, 4.0, 5.0, 19.0, 6.0) Int would be (1, 4, 5, 19, 6)
+		double[] cijfers = {1, 4, 5, 19, 7};
+		// Create variable to count all the items in.
+		double avgCijfers = 0.0;
+		
+		// Loop for each cijfer in the array so we get a total points
+		for (int i = 0; i < cijfers.length; i++) { // !!!! Because we used cijfers.length we dont need to change a thing
+			// int += x is the same as: int = int + x
+			avgCijfers += cijfers[i];
+		}
+		
+		// Print avgCijfers / amount of items that have been used.
+		System.out.println(avgCijfers / cijfers.length); // !!!! Because we used cijfers.length we dont need to change a thing
+		
+Opdracht 3:
+		// Create String Array adjectives with given values
+		String[] adjectives = { "Incredible", "Mighty", "Black", "Iron", "Hawk" };
+		// Create String Array names with given values
+		String[] names = { " Hulk", " Thor", " Widow", " Man", "eye" };
+		
+		System.out.println("Assemble the Avangers!");
+		// Create a loop to print the 2 arrays next to each other
+		for (int i = 0; i < adjectives.length; i++) {
+			// Get the item i from adjectives and from names
+			System.out.println("  " + adjectives[i] + names[i]);
+		}
+		
+Opdracht 4:
+		// Create int Array opdracht with he given values
+		int[] opdracht = {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		
+		// Create a loop to loop for every index in our array (except 0 and 1 because those are already set to 1)
+		for (int i = 2; i < opdracht.length; i++) {
+			// Set opdracht[i] to the value from 1 index back + the value from 2 index's back.
+			opdracht[i] = opdracht[i-1] + opdracht[i-2];
+			
+			// Print it to console to test the result
+			System.out.println("I = " + opdracht[i] );
+		}
+		
+COMPLEX
+		// Create int array cijfers with given values
+		int[] cijfers = {5, 1, 12 ,-5, 16};
+		// Create variable to store our first array in
+		int temp = 0;
+		
+		System.out.print("Before sorting: ");
+		System.out.println(cijfers[0] + ", " + cijfers[1] + ", " + cijfers[2]+ ", " + cijfers[3]+ ", " + cijfers[4]);
+		
+		// Create loop
+		for (int i = cijfers.length - 1; i > 0; i--) {		
+			for (int j = 0; j < cijfers.length - 1; j++) {
+				if(cijfers[j] > cijfers[j+1]) {
+					temp = cijfers[j];
+					cijfers[j] = cijfers[j+1];
+					cijfers[j+1] = temp;
+				}
+			}
+		}
+		
+		System.out.print("After sorting: ");
+		System.out.println(cijfers[0] + ", " + cijfers[1] + ", " + cijfers[2]+ ", " + cijfers[3]+ ", " + cijfers[4]);
+		
+
+
+
+
+
+
+
+
+
+

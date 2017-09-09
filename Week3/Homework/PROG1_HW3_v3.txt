@@ -1,0 +1,35 @@
+	private void onInitialize()
+	{
+		// Use 'm_WuppyAmount' for the amount of wuppys. In aiiInitialize, this variable gets the value 10;
+		int increase = 0;
+		
+		// Loop for every wup we have
+		for (int i = 0; i < m_WuppyAmount; i++) {
+			
+			increase += 50; // We want to have 50 px between all the wups so add 50 to every x per wup
+			m_XPositions[i] = increase;
+			m_YPositions[i] = 450;
+		}
+	}
+	
+	/**
+	 * This method is called about 60 times per second. 
+	 * Here we change the position of our wuppys so they seem to move:
+	 */
+	private void performStep()
+	{	
+		for (int i = 0; i < m_WuppyAmount; i++) {
+			if(m_YPositions[i] < 0) {
+				m_YHeadings[i] = 1;
+			} 
+			if(m_YPositions[i] > 550) {
+				m_YHeadings[i] = -1;
+			}
+			
+			if(m_YHeadings[i] == 1) {
+				m_YPositions[i] += i+0.5;
+			} else {
+				m_YPositions[i] -= i+0.5;
+			}
+		}
+	}

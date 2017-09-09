@@ -1,0 +1,84 @@
+Programmeren Week 3 Prackticum
+
+SIMPLE
+Opdracht 1:
+	// Create Array studentNames with given values
+	String[] studentNames = {"Peter", "Ger", "Jasper", "Bob", "Marieke"};
+	
+	// Speaks for itself ;)
+	studentNames[0] = Peter;
+	
+	studentNames[1] = Ger;
+	
+	studentNames[4] = Marieke;
+	
+	studentNames[5] = Index out of bounds :P
+	
+Opdracht 2_A:
+	Eerst wordt de array aangemaakt
+	Daarna wordt de array geprint met een apparte inde, bijvoorbeeld 1
+	dit zorgt ervoor dat de 1e index uit de array word gehaald
+	
+	Hij geeft nu een array omdat index 5 out of bounds it, er zijn 5 namen-> 0,1,2,3,4
+	
+Opdracht 2_B:
+		// Create Array studentNames with given values
+		String[] studentNames = {"Peter", "Ger", "Jasper", "Bob", "Marieke"};
+		
+		System.out.println(studentNames[0]);
+		System.out.println(studentNames[1]);
+		System.out.println(studentNames[2]); 
+		System.out.println(studentNames[3]);
+		System.out.println(studentNames[4]);
+
+BASIS
+Opdracht 1:
+		// Make an Intiger (cijfers) Array with the given values
+		int[] opdracht1 = {-1, 2, 5, 14};
+		// Declare variable to store opdracht1 in so i dont have to write opdracht[i] all the time.
+		int x = 0;
+		
+		// Loop the length of the array so all items get used. opdracht.length gives items in array -> 4
+		for (int i = 0; i < opdracht1.length; i++) {
+			
+			// Set x to opdracht1[i]
+			x = opdracht1[i];
+			
+			System.out.println("x = " + x);
+			
+			// If x is below 2 ->
+			if(x < 2) {
+				System.out.println("x is smaller than 2");
+			// Else If x equals 2 ->
+			} else if(x == 2) {
+				System.out.println("x is equal than 2");
+			// Else x has to be larger as 2
+			} else {
+				System.out.println("x is larger than 2");
+			}
+		}
+
+Opdracht 2:
+		x = 0
+		y = 0
+		y = 1
+		x = 1
+		y = 0
+		y = 1
+		x = 2
+		y = 0
+		y = 1
+		
+Opdracht 3:
+		Correct
+		
+		for(int x = 0; x < 3; x++) {
+		
+			System.out.println("x = " + x);
+			
+			for(int y = 0; y < 2; y++) {
+				
+				System.out.println( "y = " + y);
+			}
+		}
+	
