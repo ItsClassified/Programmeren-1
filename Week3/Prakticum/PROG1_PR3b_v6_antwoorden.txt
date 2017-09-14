@@ -71,8 +71,10 @@ Opdracht 3:
 		}
 		
 Opdracht 4:
-		// Create int Array opdracht with he given values
-		int[] opdracht = {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		// Create int Array opdracht with he given values (20 times 0)
+		int[] opdracht = new int[20]
+		opdracht[0] = 1;
+		opdracht[1] = 1;
 		
 		// Create a loop to loop for every index in our array (except 0 and 1 because those are already set to 1)
 		for (int i = 2; i < opdracht.length; i++) {
@@ -92,13 +94,15 @@ COMPLEX
 		System.out.print("Before sorting: ");
 		System.out.println(cijfers[0] + ", " + cijfers[1] + ", " + cijfers[2]+ ", " + cijfers[3]+ ", " + cijfers[4]);
 		
-		// Create loop
-		for (int i = cijfers.length - 1; i > 0; i--) {		
+		// Create loop to go trough all the numbers we have except the last one.
+		for (int i = cijfers.length - 1; i > 0; i--) {	
+			// Sort the current number that is being looped
 			for (int j = 0; j < cijfers.length - 1; j++) {
+				// If the number is smaller as the next number -> Switch them
 				if(cijfers[j] > cijfers[j+1]) {
-					temp = cijfers[j];
-					cijfers[j] = cijfers[j+1];
-					cijfers[j+1] = temp;
+					temp = cijfers[j]; // Store the current variable			
+					cijfers[j] = cijfers[j+1]; // Set your number to the net number
+					cijfers[j+1] = temp; // Set the next value to the value you saved earlier
 				}
 			}
 		}
