@@ -1,0 +1,68 @@
+MAIN CLASS:
+public class Main {
+
+	public static void main(String[] args) {		
+		
+		// Create type cofee with a new variable named senseo to call functions from another class.
+		CoffeeMachine senseo = new CoffeeMachine();
+		
+		// Make 11 cops of coffee
+		for (int i = 0; i < 11; i++) {
+			// senseo.{Function from CoffeeMachine() class.
+			senseo.makeCoffee();
+		}
+		
+	}
+}
+
+CoffeeMachine CLASS:
+
+public class CoffeeMachine{
+	// Variables that are needed for cofeemachine
+	int amountOfCoffee = 10;
+	int amountOfTea = 10;
+	int amountOfChocolate = 10;
+
+	// Fuction to make coffee
+	void makeCoffee(){
+		// If there is coffe (above 0)
+		if(amountOfCoffee > 0) {
+			// Print to console hey hve conffee!
+			System.out.println("Here you have a cup of coffee");
+			// Remove 1 coffe from your variable
+			amountOfCoffee--;
+		// If coffe is 0 ... there is no coffe left
+		} else {
+			// Print to console, there needs to be refuill
+			System.out.println("Coffee is out of stock! The machine has to be refilled.");
+		}
+	}
+	
+	// Function to make tea -> IS THE SAME AS COFFE BUT WITH TEA
+	void makeTea(){
+		if(amountOfTea > 0) {
+			System.out.println("Here you have a cup of tea");
+			amountOfTea--;
+		} else {
+			System.out.println("tea is out of stock! The machine has to be refilled.");
+		}
+	}
+	
+	// Function to make hot chocolate -> SAME AS TEA AND COFFEE
+	void makeHotChocolate(){
+		if (amountOfChocolate > 0) {
+			System.out.println("Here you have a cup of hot chocolate");
+			amountOfChocolate--;
+		} else {
+			System.err.println("Hot Chocolate is out of stock! The machine has to be refilled.");
+		}
+
+	}
+	
+	// Function to restock the variables
+	void restock(){
+		amountOfCoffee = 10;
+		amountOfTea = 10;
+		amountOfChocolate = 10;
+	}
+}
