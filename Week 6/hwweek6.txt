@@ -1,0 +1,31 @@
+Opdracht 1:
+	Done - snap alles
+
+Opdracht 2:
+	- Ja.
+	- Laptop?
+	- power() / openProgram() / closeProgram() / charge() -> Methods
+	- int batterie / boolean powered / String name / int price / long time 
+	- public class Laptop{
+		String name;
+		int price;
+		int space;
+		double batterie = 100.00;
+		long time;
+		boolean powered = false;
+		
+		public Laptop(String name, int price){
+			this.name = name;
+		}
+		
+		public void power(){
+			if(powered){
+				powered = false;
+			} else {
+				powered = true;
+			}
+		}
+		
+		etc.
+		
+		
